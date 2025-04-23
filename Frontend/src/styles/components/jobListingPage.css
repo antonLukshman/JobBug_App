@@ -1,0 +1,260 @@
+/* Job Listing Page Styles */
+.job-listing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.job-search-section {
+  padding: 48px 0;
+  text-align: center;
+}
+
+.job-search-title {
+  font-size: 36px;
+  color: #1a5d1a;
+  margin-bottom: 8px;
+}
+
+.job-search-subtitle {
+  font-size: 18px;
+  color: #444444;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+}
+
+.search-container {
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+}
+
+.filter-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.filter-toggle-btn,
+.clear-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 2px solid #74b72e;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #74b72e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-toggle-btn:hover,
+.clear-filters-btn:hover {
+  background-color: #c9e265;
+  color: #1a5d1a;
+}
+
+.filter-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.job-listing-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.filters-sidebar {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.filter-section {
+  margin-bottom: 24px;
+}
+
+.filter-section:last-child {
+  margin-bottom: 0;
+}
+
+.filter-title {
+  font-size: 18px;
+  color: #222222;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+}
+
+.filter-option input {
+  margin-right: 8px;
+}
+
+.filter-option label {
+  color: #444444;
+  cursor: pointer;
+}
+
+.jobs-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.jobs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.jobs-found {
+  font-size: 20px;
+  color: #222222;
+  margin: 0;
+}
+
+.sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-dropdown label {
+  color: #444444;
+}
+
+.sort-dropdown select {
+  padding: 8px;
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+  color: #222222;
+  background-color: #ffffff;
+}
+
+.loading-container,
+.error-container,
+.no-jobs-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #bbbbbb;
+  border-radius: 50%;
+  border-top-color: #74b72e;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-container p {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.no-jobs-icon {
+  width: 64px;
+  height: 64px;
+  color: #bbbbbb;
+  margin-bottom: 16px;
+}
+
+.no-jobs-found h3 {
+  font-size: 24px;
+  color: #444444;
+  margin-bottom: 8px;
+}
+
+.no-jobs-found p {
+  color: #767676;
+  margin-bottom: 24px;
+  max-width: 400px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #74b72e;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1a5d1a;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .job-listing-content {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .jobs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .filter-section {
+    margin-bottom: 16px;
+  }
+
+  .filter-title {
+    margin-bottom: 8px;
+  }
+}

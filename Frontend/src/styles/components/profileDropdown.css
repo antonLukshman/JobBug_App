@@ -1,0 +1,208 @@
+/* Profile Dropdown Styles */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  background-color: var(--primary-light);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 8px;
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  width: 240px; /* Reduced from 280px */
+  z-index: var(--z-index-dropdown); /* Ensure it appears above other elements */
+  overflow: hidden;
+  animation: dropdown-fade 0.2s ease;
+  padding: var(--spacing-sm); /* Reduced padding */
+}
+
+@keyframes dropdown-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-header {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--light);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.user-avatar {
+  margin-right: var(--spacing-md);
+}
+
+.profile-image-large {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--primary-light);
+}
+
+.user-details h3 {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-xs);
+  color: var(--dark);
+}
+
+.user-details p {
+  font-size: var(--font-size-sm);
+  color: var(--medium);
+  margin-bottom: 0;
+}
+
+.view-profile-btn {
+  display: block;
+  text-align: center;
+  padding: var(--spacing-xs) 0;
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius-md);
+  color: var(--primary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.view-profile-btn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.dropdown-section {
+  padding: var(--spacing-xs); /* Reduced padding */
+  border-bottom: 1px solid var(--light);
+}
+
+.dropdown-section:last-child {
+  border-bottom: none;
+}
+
+.dropdown-section h4 {
+  font-size: var(--font-size-sm);
+  color: var(--medium-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.dropdown-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section ul li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.dropdown-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-section ul li a,
+.sign-out-btn {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+  color: var(--medium-dark);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.dropdown-section ul li a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.menu-icon {
+  margin-right: var(--spacing-sm);
+}
+
+.premium-icon {
+  color: var(--accent-dark);
+}
+
+.sign-out-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: var(--spacing-xs) 0; /* Reduced padding */
+  font-size: var(--font-size-sm); /* Ensure font size is consistent */
+}
+
+.sign-out-btn:hover {
+  color: var(--danger);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Full width for mobile */
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    max-height: 80vh; /* Allow scrolling if content exceeds viewport */
+    overflow-y: auto;
+    z-index: var(
+      --z-index-dropdown
+    ); /* Ensure it appears above other elements */
+    padding: var(--spacing-md); /* Maintain padding for mobile */
+  }
+
+  .dropdown-header {
+    padding: var(--spacing-lg);
+    text-align: center; /* Center align for better appearance */
+  }
+
+  .dropdown-section {
+    padding: var(
+      --spacing-md
+    ); /* Restore padding for better spacing on mobile */
+  }
+
+  .view-profile-btn {
+    width: 100%; /* Make button full width */
+    padding: var(--spacing-md);
+  }
+
+  .dropdown-section ul li a,
+  .sign-out-btn {
+    padding: var(--spacing-md) 0; /* Increase padding for better touch targets */
+    font-size: var(--font-size-md); /* Larger font size for readability */
+  }
+}
